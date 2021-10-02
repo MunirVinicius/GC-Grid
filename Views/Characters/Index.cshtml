@@ -1,0 +1,30 @@
+@model IEnumerable<grandchase.Models.Character>
+
+@{
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<h1>Grand Chase</h1>
+<div class="flex">
+    @{
+        foreach (var item in Model)
+        {
+            string imgurl = "img/" + @item.Name + "ChibiEdit.png";
+            <div class="card">
+                <div class="char">
+                    <h2>@item.Name</h2>
+                    <img src="@imgurl"/>
+                    <p>@item.Title</p>
+                </div>
+                <div class="status">
+                    <h2>Atributos</h2>
+                    <p class="ataque"><strong>ATAQUE: @item.attack </strong></p>
+                    <p class="vida"><strong>VIDA: @item.hp </strong></p>
+                    <p class="defesa"><strong>DEFESA: @item.defense </strong></p>
+                </div>
+            </div>
+        }
+    }
+</div>
